@@ -1,0 +1,6 @@
+Rettangolo, perimetro, base, 7, altezza, 12;
+Quadrato, area, lato, 5;
+Rettangolo, diagonale, base, 10, altezza, ?;
+Rettangolo, Calcola tutto, Base, 7, Altezza, 12 ;
+Quadrato, Calcola tutto, Lato, 5 ;
+Triangolo Scaleno, Calcola tutto, LatoA, 3, LatoB, 4, LatoC, 5 ;
