@@ -1,5 +1,8 @@
+## Descrizione
 Questo progetto è un tool da riga di comando (CLI) scritto in Python.
 Genera password basandosi su vari parametri forniti dall'utente. Il tool supporta la generazione di password completamente casuali o la creazione di "passphrase" più memorizzabili utilizzando parole, numeri e simboli.
+
+---
 
 ### OPZIONI
 
@@ -39,6 +42,8 @@ Genera password basandosi su vari parametri forniti dall'utente. Il tool support
     * Specifica il file contenente parole per la modalità dizionario, per semplicità mettilo nella stessa cartella dello script.
     * Le parole all'interno del file devono essere separate da virgole (es. `parola1,parola2,altraparola`).
     * Richiede l'uso dell'opzione `--dictionary`.
+      
+---
 
 ### ESEMPI D'USO
 
