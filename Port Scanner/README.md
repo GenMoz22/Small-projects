@@ -6,7 +6,7 @@ Ogni servizio di rete (come un server web, un server FTP, un server SSH) è in a
 Lo script implementa un tipo di scansione chiamato **"TCP Connect Scan"**:
 1.  **Tentativo di Connessione:** Il programma tenta di stabilire una connessione TCP completa (`SYN`, `SYN-ACK`, `ACK`) a una porta specifica sul target.
 2.  **Risposta del Target:**
-    * Se la porta è **aperta**, il target risponde con un `SYN-ACK` e lo script completa il handshake con un `ACK`. Questo indica che un servizio è in ascolto su quella porta.
+    * Se la porta è **aperta**, il target risponde con un `SYN-ACK` e lo script completa l' handshake con un `ACK`. Questo indica che un servizio è in ascolto su quella porta.
     * Se la porta è **chiusa**, il target risponde con un pacchetto `RST` (Reset), indicando che non c'è nessun servizio in ascolto e la connessione è stata rifiutata.
     * Se non c'è **alcuna risposta** (o un timeout), la porta potrebbe essere filtrata da un firewall, o l'host non è raggiungibile.
 
