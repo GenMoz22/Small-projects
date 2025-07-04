@@ -30,10 +30,12 @@ def setup_driver():
     il che significa che non devi scaricarlo o specificare il suo percorso manualmente.
     """
     firefox_options = FirefoxOptions() # Crea un oggetto per configurare le opzioni di Firefox
+    
     # Puoi scommentare la riga seguente per eseguire Firefox in modalità headless (senza interfaccia grafica)
     # Questa modalità è utile per l'esecuzione su server o per rendere lo scraping più veloce
     # firefox_options.add_argument("--headless")
-    # Aggiungi argomenti comuni per la modalità headless su sistemi Linux, spesso necessari per prevenire errori
+    
+    # Per la modalità headless su sistemi Linux
     # firefox_options.add_argument("--no-sandbox")
     # firefox_options.add_argument("--disable-dev-shm-usage")
 
@@ -105,7 +107,7 @@ def get_weather_data(driver: webdriver.Firefox, city: str) -> dict | None:
         search_box.clear() # Pulisce qualsiasi testo preesistente nella casella di ricerca
         search_box.send_keys(city) # Digita il nome della città nella casella di ricerca
         
-        # *** INIZIO MODIFICHE PER SELEZIONE SUGGERIMENTO PIÙ ROBUSTA ***
+       
         # Estrai solo il nome della città (es. "Roma" da "Roma, Italia")
         city_name_only = city.split(',')[0].strip() 
         
@@ -127,10 +129,10 @@ def get_weather_data(driver: webdriver.Firefox, city: str) -> dict | None:
             print(f"    Nessun suggerimento specifico trovato o cliccabile per {city_name_only} dopo aver digitato. Tentativo con ENTER.")
             search_box.send_keys(Keys.ENTER) # Simula la pressione del tasto INVIO
             time.sleep(5) # Pausa più lunga dopo INVIO, poiché potrebbe portare a una pagina di ricerca generica o a un caricamento più lungo
-        # *** FINE MODIFICHE PER SELEZIONE SUGGERIMENTO ***
+        # 
 
 
-        # *** AGGIORNATO: Attendi che l'elemento della temperatura attuale sia VISIBILE ***
+        # Attendi che l'elemento della temperatura attuale sia VISIBILE
         # Questo è l'indicatore più affidabile che la pagina specifica della città è caricata con i dati.
         print(f"    Attesa del caricamento dei dati meteo per {city}...")
         WebDriverWait(driver, 25).until( # Aumentato il timeout per il caricamento dei dati, specialmente su connessioni lente
