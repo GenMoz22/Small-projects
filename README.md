@@ -1,2 +1,0 @@
-# Small-projects
-Piccoli progetti 
